@@ -71,34 +71,6 @@ Start the Django development server:
 python manage.py runserver
 ```
 
-### Access the Application
-
-Open your web browser and go to:
-
-```
-http://127.0.0.1:8000/
-```
-
-You can now register, log in, and explore the Event Tickets Management system!
-
-## How It Works 🧩
-
-### User Authentication
-
-- Users can register with their email and password.
-- After registration, users receive an OTP via email to verify their account.
-
-### Email Verification
-
-- An OTP is sent to the user's email upon registration.
-- Users need to enter the OTP to activate their account.
-
-### Responsive Design
-
-- The application uses a responsive design framework to ensure a seamless experience across devices.
-- Cards are used extensively to display events and tickets, providing a clean and modern look.
-
-
 
 ## Contact 📬
 
@@ -113,10 +85,16 @@ Thank you for using Event Tickets Management! We hope you find it helpful and ea
 
 Happy Event Managing! 🎉
 
-![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011)
+
 ![Capture4](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/879fa28e-cfe7-4737-a9a0-64c6202d74c8)
+
 ![Capture2](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/c6e206cb-f98d-4ae3-837b-c5731867ff84)
+
 ![Capture1](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/90cac42c-241b-4093-aa34-269aee508276)
+
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/60aee517-7c3b-49fb-8416-e13e70cdd6b3)
+
+![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011)
+
 
 
