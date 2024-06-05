@@ -88,15 +88,15 @@ Happy Event Managing! 🎉
 
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/076c20d8-b038-4009-8df0-f27f840b978d)    _____________________  ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/0d6c949b-e231-4046-8060-4a1f9920856d)
 
-__________________________________________________________________________    Authontication   _____________________________________________________________________________________
+__________________________________________________________________________    Authontication  
 
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/28d79185-24dd-49bb-b172-5fc80449e5bd)
 
-__________________________________________________________________________     Home Page      _____________________________________________________________________________________
+__________________________________________________________________________     Home Page     
 
 ![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011) _____________________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/07915350-1cec-4846-9e6f-113ddfa99342)
 
-__________________________________________________________________________    Mobile Responcive  __________________________________________________________________________________
+__________________________________________________________________________    Mobile Responcive  
 
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/b8751033-3731-4d7b-9df4-0cc4143bcdc2)
 
