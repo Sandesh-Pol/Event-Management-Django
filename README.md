@@ -98,13 +98,7 @@ You can now register, log in, and explore the Event Tickets Management system!
 - The application uses a responsive design framework to ensure a seamless experience across devices.
 - Cards are used extensively to display events and tickets, providing a clean and modern look.
 
-## Contributing 🤝
 
-We welcome contributions! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
-
-## License 📜
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact 📬
 
@@ -118,3 +112,11 @@ For any inquiries or feedback, please contact us at:
 Thank you for using Event Tickets Management! We hope you find it helpful and easy to use. If you encounter any issues or have suggestions, please don't hesitate to reach out. 🌟
 
 Happy Event Managing! 🎉
+
+![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011)
+![Capture4](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/879fa28e-cfe7-4737-a9a0-64c6202d74c8)
+![Capture2](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/c6e206cb-f98d-4ae3-837b-c5731867ff84)
+![Capture1](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/90cac42c-241b-4093-aa34-269aee508276)
+![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/60aee517-7c3b-49fb-8416-e13e70cdd6b3)
+
+
