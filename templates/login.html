@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+
+<body style="background-image: url('{% static 'images/loginBG.jpg' %}')">
+    <section>
+            <form method="post">
+                {% csrf_token %} 
+                <h1>Login</h1>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div style="text-align: center; color: rgb(96 10 106); margin-top: 20px;"  class="message {{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                <div class="inputbox">
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input type="text" name="username" required>
+                    <label for="">Username</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox">Remember Me</label>
+                    <a href="{% url 'verification_view' %}">Forget Password</a>
+                </div>
+                <button type="submit">Log in</button>
+                <div class="register">
+                    <p>Don't have a account <a href="{% url 'register_user' %}">Register</a></p>
+                </div>
+            </form>
+        </section>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
+
+</html>

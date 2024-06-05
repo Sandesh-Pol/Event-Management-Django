@@ -1,0 +1,213 @@
+{% load static %}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins',sans-serif;
+}
+#red {
+    color: red !important;
+    align-items: center;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('{% static images/loginBG.jpg %}');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+section {
+    position: relative;
+    max-width: 400px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 3rem;
+}
+
+h1{
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+h3{
+    font-size: 13px;
+    color: #d9d9d9;
+    text-align: center;
+    margin-top:20px;
+}
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+input:focus ~ label, 
+input:valid ~ label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 60px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+}
+.messages{
+    align-items: center; 
+    text-align: center; 
+    color: rgb(62, 9, 68); 
+    margin-top: 20px;
+}
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.85rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255,255, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+  background-color: rgb(255, 255,255, 0.5);
+}
+
+.register {
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    text-decoration: underline;
+}
+
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+  }
+
+
+
+
+
+  .box{
+    padding: 5rem 3rem;
+  }
+
+  .forget p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-left: 20px;
+  }
+.otp-inputs{
+    display: flex;
+    column-gap: 2vw;
+    margin:20px;
+    justify-content: center;
+}
+.otp-input{
+    border:none;
+    outline:none;
+    border-bottom: 2px solid white;
+    background: transparent;
+    width:3.5vw;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+    color: #fff;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+}
+.mt{
+    margin-top:20px;
+}
+
+@media only screen and (min-width:320px) and (max-width:520px){
+    .otp-input{
+        width:2rem;
+    }
+}
+@media only screen and (min-width:520px){
+    .otp-input{
+        width:2rem;
+    }
+}
