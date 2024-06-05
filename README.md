@@ -98,7 +98,7 @@ Happy Event Managing! 🎉
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/60aee517-7c3b-49fb-8416-e13e70cdd6b3)
 
 
-![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011)  ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/07915350-1cec-4846-9e6f-113ddfa99342)
+![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011)                           ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/07915350-1cec-4846-9e6f-113ddfa99342)
 
 
 
