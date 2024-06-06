@@ -85,20 +85,26 @@ Thank you for using Event Tickets Management! We hope you find it helpful and ea
 
 Happy Event Managing! 🎉
 
-
+                                                                          Authentication
+                                                                          
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/076c20d8-b038-4009-8df0-f27f840b978d)    _____________  ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/0d6c949b-e231-4046-8060-4a1f9920856d)
-
-__________________________________________________________________________    Authontication  
-
+  
+                                                                          Responsive Design
+                                                                          
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/28d79185-24dd-49bb-b172-5fc80449e5bd)
 
-__________________________________________________________________________     Home Page     
+
 
 ![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011) _____________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/07915350-1cec-4846-9e6f-113ddfa99342)
 
-__________________________________________________________________________    Mobile Responcive  
+                                                                          Email Verification                                                                            
 
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/b8751033-3731-4d7b-9df4-0cc4143bcdc2)
+
+
+![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/663b70b5-eb5f-4d39-8568-dc4eeb36d10d) ______________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/ecb6102b-d30a-4e04-90b8-2a173c90fe49)
+
+
 
 
 
