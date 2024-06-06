@@ -6,33 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Document</title>
+    <title>Verify OTP</title>
 </head>
 
 <body style="background-image: url('{% static 'images/loginBG.jpg' %}')">
     <section class="box">
-            <form method="post">
-                {% csrf_token %} 
-                <h1>Please Enter the OTP to verify account</h1>
-                {% if messages %}
-                    {% for message in messages %}
-                        <div style="text-align: center; color: rgb(96 10 106); margin-top: 20px;"  class="message {{ message.tags }}">{{ message }}</div>
-                    {% endfor %}
-                {% endif %}
-                <h3>A One-Time Password has been sent abc@gmail.com</h3>
-                <div class="otp-inputs">
-                    <input class="otp-input" type="text" maxlength="1" id="otp1" oninput="moveToNext(this, 'otp2')" />
-                    <input class="otp-input" type="text" maxlength="1" id="otp2" oninput="moveToNext(this, 'otp3')" />
-                    <input class="otp-input" type="text" maxlength="1" id="otp3" oninput="moveToNext(this, 'otp4')" />
-                    <input class="otp-input" type="text" maxlength="1" id="otp4" oninput="moveToNext(this, 'otp4')" />
-                </div>
-                <button  class="mt"  type="submit">Verify OTP</button>
-
-            </form>
-        </section>
-        <script src="{% static 'js/otp.js' %}"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    </body>
-
+        <form method="post">
+            {% csrf_token %} 
+            <h1>Please Enter the OTP to verify account</h1>
+            {% if messages %}
+                {% for message in messages %}
+                    <div style="text-align: center; color: rgb(96 10 106); margin-top: 20px;"  class="message {{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+            <h3>A One-Time Password has been sent to abc@gmail.com</h3>
+            <div class="otp-inputs">
+                <input class="otp-input" name="otp1" type="text" maxlength="1" id="otp1" oninput="moveToNext(this, 'otp2')" />
+                <input class="otp-input" name="otp2" type="text" maxlength="1" id="otp2" oninput="moveToNext(this, 'otp3')" />
+                <input class="otp-input" name="otp3" type="text" maxlength="1" id="otp3" oninput="moveToNext(this, 'otp4')" />
+                <input class="otp-input" name="otp4" type="text" maxlength="1" id="otp4" oninput="moveToNext(this, 'otp4')" />
+            </div>
+            <button class="mt" type="submit">Verify OTP</button>
+        </form>
+    </section>
+    <script src="{% static 'js/otp.js' %}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
 </html>

@@ -4,10 +4,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
-from .forms import LoginForm, RegisterForm
+from .forms import LoginForm, RegisterForm,OTPVerificationForm ,PasswordResetRequestForm, SetNewPasswordForm
 from .models import Profile
 from django.contrib.auth.models import User
 import uuid
+from .models import OTP
+import random
+
+#authonticatin using email varifiction
 
 @login_required
 def index_view(request):
@@ -122,3 +126,77 @@ def verification_view(request):
 
 def put_otp(request):
     return render(request, 'otp2.html')
+
+
+# password reset 
+
+def generate_otp():
+    return str(random.randint(1000, 9999))
+
+def send_otp_via_email(user, otp):
+    subject = "Your OTP for Password Reset"
+    message = f"Your OTP for password reset is {otp}"
+    from_email = 'your_email@example.com'
+    to_email = [user.email]
+    send_mail(subject, message, from_email, to_email)
+
+def password_reset_request(request):
+    if request.method == 'POST':
+        form = PasswordResetRequestForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            try:
+                user = User.objects.get(email=email)
+                otp = generate_otp()
+                OTP.objects.update_or_create(user=user, defaults={'otp': otp})
+                send_otp_via_email(user, otp)
+                request.session['user_id'] = user.id
+                return redirect('verify_otp')
+            except User.DoesNotExist:
+                messages.error(request, 'No user with this email found.')
+    else:
+        form = PasswordResetRequestForm()
+    return render(request, 'otp1.html', {'form': form})
+
+# myapp/views.py
+
+def verify_otp(request):
+    if request.method == 'POST':
+        otp1 = request.POST.get('otp1').strip()
+        otp2 = request.POST.get('otp2').strip()
+        otp3 = request.POST.get('otp3').strip()
+        otp4 = request.POST.get('otp4').strip()
+        otp = f"{otp1}{otp2}{otp3}{otp4}"
+
+        user_id = request.session.get('user_id')
+        if user_id:
+            try:
+                user = User.objects.get(id=user_id)
+                user_otp = OTP.objects.get(user=user)
+                if user_otp.otp == otp:
+                    return redirect('set_new_password')
+                else:
+                    messages.error(request, 'Invalid or expired OTP.')
+            except (User.DoesNotExist, OTP.DoesNotExist):
+                messages.error(request, 'Invalid OTP.')
+    return render(request, 'otp2.html')
+
+
+def set_new_password(request):
+    if request.method == 'POST':
+        form = SetNewPasswordForm(request.POST)
+        if form.is_valid():
+            new_password = form.cleaned_data['new_password']
+            user_id = request.session.get('user_id')
+            if user_id:
+                try:
+                    user = User.objects.get(id=user_id)
+                    user.set_password(new_password)
+                    user.save()
+                    messages.success(request, 'Password successfully reset.')
+                    return redirect('login_user')
+                except User.DoesNotExist:
+                    messages.error(request, 'User not found.')
+    else:
+        form = SetNewPasswordForm()
+    return render(request, 'set_new_password.html', {'form': form})

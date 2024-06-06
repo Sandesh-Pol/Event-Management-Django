@@ -9,6 +9,7 @@ urlpatterns = [
     path('success', views.success, name='success'),
     path('verify/<auth_token>', views.verify, name='verify'),
     path('error', views.error_page, name='error'),
-    path('verification', views.verification_view, name='verification_view'),
-    path('varify', views.put_otp, name='put_otp'),
+    path('password_reset/', views.password_reset_request, name='password_reset_request'),
+    path('verify_otp/', views.verify_otp, name='verify_otp'),
+    path('set_new_password/', views.set_new_password, name='set_new_password'),
 ]

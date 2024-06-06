@@ -45,3 +45,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById('otp3').addEventListener('keyup', (e) => handleKeyUp(e, 'otp3', 'otp2'));
     document.getElementById('otp4').addEventListener('keyup', (e) => handleKeyUp(e, 'otp4', 'otp3'));
 });
+
+
+window.onload = function() {
+    document.getElementById("otp1").focus();
+};
