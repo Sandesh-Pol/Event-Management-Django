@@ -87,7 +87,9 @@ Happy Event Managing! 🎉
 
                                                                           Authentication
                                                                           
-![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/076c20d8-b038-4009-8df0-f27f840b978d)    _____________  ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/0d6c949b-e231-4046-8060-4a1f9920856d)
+![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/e1100e26-fdf0-47e1-83d4-192be6783865) ______________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/17da4c5d-37b5-4029-b284-e43e9180bc19)
+
+  
   
                                                                           Responsive Design
                                                                           
