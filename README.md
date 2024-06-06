@@ -85,26 +85,26 @@ Thank you for using Event Tickets Management! We hope you find it helpful and ea
 
 Happy Event Managing! 🎉
 
-                                                                          Authentication
+                                                Authentication
                                                                           
-![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/e1100e26-fdf0-47e1-83d4-192be6783865) ______________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/17da4c5d-37b5-4029-b284-e43e9180bc19)
+![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/e1100e26-fdf0-47e1-83d4-192be6783865) ___________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/17da4c5d-37b5-4029-b284-e43e9180bc19)
 
   
   
-                                                                          Responsive Design
+                                                Responsive Design
                                                                           
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/28d79185-24dd-49bb-b172-5fc80449e5bd)
 
 
 
-![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011) _____________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/07915350-1cec-4846-9e6f-113ddfa99342)
+![Capture5](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/245e84d6-5bc4-4cf3-970c-8a2dd9c72011) __________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/07915350-1cec-4846-9e6f-113ddfa99342)
 
-                                                                          Email Verification                                                                            
+                                              Email Verification                                                                            
 
 ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/b8751033-3731-4d7b-9df4-0cc4143bcdc2)
 
 
-![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/663b70b5-eb5f-4d39-8568-dc4eeb36d10d) ______________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/ecb6102b-d30a-4e04-90b8-2a173c90fe49)
+![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/663b70b5-eb5f-4d39-8568-dc4eeb36d10d) ___________ ![image](https://github.com/Sandesh-Pol/Event-Management-Django/assets/135794224/ecb6102b-d30a-4e04-90b8-2a173c90fe49)
 
 
 
