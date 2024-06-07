@@ -346,21 +346,6 @@
       </div>
     </div>
   </section>
-  <script>
-    function incrementLikes(eventId) {
-        fetch(`/increment_likes/${eventId}/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': '{{ csrf_token }}'
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            document.getElementById(`likes-${eventId}`).innerText = data.likes;
-        });
-    }
-</script>
 </body>
 
 </html>
