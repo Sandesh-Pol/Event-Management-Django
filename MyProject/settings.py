@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'LoginApp'
+    'LoginApp',
+    'event_card',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,12 @@ EMAIL_HOST_USER = "sdcr7ff@gmail.com"
 EMAIL_HOST_PASSWORD = "kbihqpulrpbrkxdz"
 
 # AB8X 4AE5 69BR GZD4 7T1Z YD67 99P4 C1N0
+
+
+# image database configuration
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'event_images')
+
+# Define the URL for serving media files
+MEDIA_URL = ''

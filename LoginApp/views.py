@@ -6,18 +6,13 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .forms import LoginForm, RegisterForm,OTPVerificationForm ,PasswordResetRequestForm, SetNewPasswordForm
 from .models import Profile
+from event_card.views import index_view
 from django.contrib.auth.models import User
 import uuid
 from .models import OTP
 import random
 
 #authonticatin using email varifiction
-
-@login_required
-def index_view(request):
-    form_data = request.session.get('form_data')
-    request.session.pop('form_data', None)
-    return render(request, 'index.html', {'form_data': form_data})
 
 def login_user(request):
     if request.method == 'POST':
