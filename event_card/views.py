@@ -14,7 +14,6 @@ def index_view(request):
         'events': events,
         'user_likes': user_likes,
     }
-    print(context)
     return render(request, 'index.html', context)
 
 @login_required
