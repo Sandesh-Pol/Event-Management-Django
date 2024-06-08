@@ -140,9 +140,12 @@
           {% for event in events %}
           <div class="card event-card">
             <div class="event-header">
-              <img src="{{ event.image }}" alt="{{ event.name }}" />
+              <img src="{{ event.image.url }}" alt="{{ event.name }}" />
               <p>{{ event.time }}</p>
-              <i class="bx bx-heart like-btn"></i>
+              <i class="bx bx-heart like-btn"
+              data-event-id="{{ event.id }}"
+              data-liked="{% if user.is_authenticated %}true{% else %}false{% endif %}">
+           </i>
             </div>
             <div class="event-content">
               <h2>{{ event.name }}</h2>
@@ -171,6 +174,31 @@
           {% endfor %}
         </div>
       </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          $('.like-btn').click(function () {
+            var btn = $(this);
+            var eventId = btn.data('event-id');
+
+            $.ajax({
+              url: '{% url "like_event" event_id=0 %}'.replace(0, eventId),
+              type: 'POST',
+              dataType: 'json',
+              headers: { 'X-CSRFToken': '{{ csrf_token }}' },
+              success: function (response) {
+                if (response.message === 'Liked') {
+                  btn.addClass('liked');
+                } else if (response.message === 'Unliked') {
+                  btn.removeClass('liked');
+                }
+              }
+            });
+          });
+        });
+      </script>
+
 
       <div class="reviews">
         <h1>Past Event Reviews</h1>

@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Event(models.Model):
@@ -27,3 +28,11 @@ class Event(models.Model):
 
     def get_type_color(self):
         return self.TYPE_COLORS.get(self.type, '#000000')  # Default color if type not found
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'event')
