@@ -152,4 +152,4 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MEDIA_ROOT = os.path.join(BASE_DIR, 'event_images')
 
 # Define the URL for serving media files
-MEDIA_URL = ''
+MEDIA_URL = '/event_images/'
