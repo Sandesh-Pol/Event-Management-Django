@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from .models import Event, Like
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def index_view(request):
     events = Event.objects.all()
     user_likes = {}
