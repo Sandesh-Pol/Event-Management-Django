@@ -10,13 +10,16 @@ def index_view(request):
     if request.user.is_authenticated:
         user_likes = {event.id: event.like_set.filter(user=request.user).exists() for event in events}
     
+    if request.GET.get('favorites') == 'true':
+        events = events.filter(like__user=request.user)
+    
     context = {
         'events': events,
         'user_likes': user_likes,
     }
     return render(request, 'index.html', context)
 
-@login_required
+@login_required     
 def like_event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     user = request.user
@@ -33,3 +36,9 @@ def like_event(request, event_id):
     event.save()
 
     return JsonResponse({'message': 'Liked' if liked else 'Unliked', 'likes': event.likes})
+
+
+
+
+
+
