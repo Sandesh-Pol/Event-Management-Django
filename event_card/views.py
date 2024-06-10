@@ -1,3 +1,4 @@
+from collections import Counter
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import Event, Like
@@ -13,10 +14,23 @@ def index_view(request):
     if request.GET.get('favorites') == 'true':
         events = events.filter(like__user=request.user)
     
+    event_types = [event.type for event in events]
+    event_type_counts = dict(Counter(event_types))
+    total_events = sum(event_type_counts.values())
+
+    event_type_percentages = {}
+
+    for event_type, count in event_type_counts.items():
+        percentage = (count / total_events) * 100
+        event_type_percentages[event_type] = int(percentage)
+
     context = {
         'events': events,
         'user_likes': user_likes,
+        'event_type_counts': event_type_counts,
+        'event_type_percentages': event_type_percentages,
     }
+    print(context)
     return render(request, 'index.html', context)
 
 @login_required     
