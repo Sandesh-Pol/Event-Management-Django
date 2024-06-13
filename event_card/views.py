@@ -3,10 +3,14 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from .models import Event, Like
 from django.contrib.auth.decorators import login_required
-
+from django.db.models import Q
 @login_required
 def index_view(request):
+    query = request.GET.get('query', '')
     events = Event.objects.all()
+    if query:
+        events = events.filter(Q(name__icontains=query) | Q(place__icontains=query))
+
     user_likes = {}
     if request.user.is_authenticated:
         user_likes = {event.id: event.like_set.filter(user=request.user).exists() for event in events}
@@ -29,8 +33,8 @@ def index_view(request):
         'user_likes': user_likes,
         'event_type_counts': event_type_counts,
         'event_type_percentages': event_type_percentages,
+        'query': query,  # Pass the query back to the template
     }
-    print(context)
     return render(request, 'index.html', context)
 
 @login_required     

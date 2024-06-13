@@ -90,9 +90,9 @@
   <section class="content">
     <div class="left-content">
       <div class="search-and-check">
-        <form class="search-box">
-          <input type="text" placeholder="Search event..." />
-          <i class="bx bx-search"></i>
+        <form class="search-box" method="GET" action="">
+          <input type="text" name="query" placeholder="Search event..." value="{{ query }}" />
+          <i class="bx bx-search" onclick="this.closest('form').submit();"></i>
         </form>
         <div class="interaction-control-mobile interactions">
           <i class="fa-regular fa-envelope notified"></i>
@@ -374,9 +374,7 @@
         <div class="contacts-container">
           <div class="contact-status">
             <div class="contact-activity">
-              <img
-                src="{% static 'images/1.jpg' %}"
-                alt="" />
+              <img src="{% static 'images/1.jpg' %}" alt="" />
               <p>Matt favored <span>Jazz Fusion Night</span></p>
             </div>
             <small>1 hour ago</small>
@@ -384,9 +382,7 @@
 
           <div class="contact-status">
             <div class="contact-activity">
-              <img
-                src="{% static 'images/2.jpg' %}"
-                alt="" />
+              <img src="{% static 'images/2.jpg' %}" alt="" />
               <p>
                 Bella bought a ticket for
                 <span>Acoustic Serenade Under the Stars</span>
@@ -397,9 +393,7 @@
 
           <div class="contact-status">
             <div class="contact-activity">
-              <img
-                src="{% static 'images/3.jpg' %}"
-                alt="" />
+              <img src="{% static 'images/3.jpg' %}" alt="" />
               <p>
                 Lucas bought a ticket for
                 <span>Wimbledon Championships - 2024</span>
@@ -410,9 +404,7 @@
 
           <div class="contact-status">
             <div class="contact-activity">
-              <img
-                src="{% static 'images/4.jpg' %}"
-                alt="" />
+              <img src="{% static 'images/4.jpg' %}" alt="" />
               <p>
                 Sophia favored
                 <span>Clay Sculpting Class</span>
@@ -423,9 +415,7 @@
 
           <div class="contact-status">
             <div class="contact-activity">
-              <img
-                src="{% static 'images/5.jpg' %}"
-                alt="" />
+              <img src="{% static 'images/5.jpg' %}" alt="" />
               <p>
                 Kate bought a ticket for
                 <span>Latin Rhythms Fusion</span>
@@ -436,9 +426,7 @@
 
           <div class="contact-status">
             <div class="contact-activity">
-              <img
-                src="{% static 'images/6.jpg' %}"
-                alt="" />
+              <img src="{% static 'images/6.jpg' %}" alt="" />
               <p>
                 Ben favored
                 <span>Harry Potter Film Concert Series</span>
