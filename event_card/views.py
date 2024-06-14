@@ -28,12 +28,14 @@ def index_view(request):
         percentage = (count / total_events) * 100
         event_type_percentages[event_type] = int(percentage)
 
+    event_count = Event.objects.all().count()
     context = {
         'events': events,
         'user_likes': user_likes,
         'event_type_counts': event_type_counts,
         'event_type_percentages': event_type_percentages,
         'query': query,  # Pass the query back to the template
+        'event_count':event_count
     }
     return render(request, 'index.html', context)
 

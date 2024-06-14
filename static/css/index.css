@@ -289,6 +289,19 @@ body {
   box-shadow: 0 8px 20px rgba(74, 72, 72, 0.1);
 }
 
+/* .event-header span {
+  position: absolute;
+  right: 12px;
+  top: 44px;
+  color: rgb(240, 248, 255);
+  font-size: 0.7rem;
+  text-align: center;
+  background-color: rgba(17, 16, 45, 0.6);
+  box-shadow: 0 8px 20px rgba(74, 72, 72, 0.1);
+  padding: 3px;
+  border-radius: 18%;
+} */
+
 .bx-heart,
 .bxs-heart {
   position: absolute;
