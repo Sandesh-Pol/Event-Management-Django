@@ -36,3 +36,16 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ('user', 'event')
+
+
+class UserAction(models.Model):
+    ACTION_TYPES = (
+        ('like', 'Like'),
+        ('share_whatsapp', 'Share on WhatsApp'),
+        ('share_twitter', 'Share on Twitter'),
+    )
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    action_type = models.CharField(max_length=20, choices=ACTION_TYPES)
+    timestamp = models.DateTimeField(auto_now_add=True)

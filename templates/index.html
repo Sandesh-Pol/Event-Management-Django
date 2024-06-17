@@ -153,19 +153,21 @@
                   </button>
                   <ul class="popup">
                     <li>
-                      <a href="https://twitter.com/intent/tweet?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}&url={{ request.build_absolute_uri }}" style="color: rgb(79, 153, 213)">
+                      <a href="https://twitter.com/intent/tweet?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}&url={{ request.build_absolute_uri }}"
+                        style="color: rgb(79, 153, 213)">
                         <i class="bx bxl-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="https://api.whatsapp.com/send?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}%20{{ request.build_absolute_uri }}" style="color: rgb(34, 173, 34)">
+                      <a href="https://api.whatsapp.com/send?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}%20{{ request.build_absolute_uri }}"
+                        style="color: rgb(34, 173, 34)">
                         <i class="bx bxl-whatsapp"></i>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
-              
+
             </div>
           </div>
           {% endif %}
@@ -175,28 +177,7 @@
       </div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script>
-        $(document).ready(function () {
-          $(".like-btn").click(function () {
-            var btn = $(this);
-            var eventId = btn.data("event-id");
 
-            $.ajax({
-              url: '{% url "like_event" event_id=0 %}'.replace(0, eventId),
-              type: "POST",
-              dataType: "json",
-              headers: { "X-CSRFToken": "{{ csrf_token }}" },
-              success: function (response) {
-                if (response.message === "Liked") {
-                  btn.addClass("liked");
-                } else if (response.message === "Unliked") {
-                  btn.removeClass("liked");
-                }
-              },
-            });
-          });
-        });
-      </script>
 
       <div class="reviews">
         <h1>Past Event Reviews</h1>
@@ -377,72 +358,52 @@
       <div class="contacts">
         <h1>Contacts</h1>
         <div class="contacts-container">
+          {% for action in user_actions %}
           <div class="contact-status">
             <div class="contact-activity">
-              <img src="{% static 'images/1.jpg' %}" alt="" />
-              <p>Matt favored <span>Jazz Fusion Night</span></p>
-            </div>
-            <small>1 hour ago</small>
-          </div>
-
-          <div class="contact-status">
-            <div class="contact-activity">
-              <img src="{% static 'images/2.jpg' %}" alt="" />
+              <img src="{{ action.user.profile.image.url }}" alt="{{ action.user.username }}" />
               <p>
-                Bella bought a ticket for
-                <span>Acoustic Serenade Under the Stars</span>
+                {{ action.user.username }}
+                {% if action.action_type == 'like' %}
+                liked
+                {% elif action.action_type == 'share_whatsapp' %}
+                shared on WhatsApp
+                {% elif action.action_type == 'share_twitter' %}
+                shared on Twitter
+                {% endif %}
+                <span>{{ action.event.name }}</span>
               </p>
             </div>
-            <small>4 hours ago</small>
+            <small>{{ action.timestamp|timesince }} ago</small>
           </div>
-
-          <div class="contact-status">
-            <div class="contact-activity">
-              <img src="{% static 'images/3.jpg' %}" alt="" />
-              <p>
-                Lucas bought a ticket for
-                <span>Wimbledon Championships - 2024</span>
-              </p>
-            </div>
-            <small>1 day ago</small>
-          </div>
-
-          <div class="contact-status">
-            <div class="contact-activity">
-              <img src="{% static 'images/4.jpg' %}" alt="" />
-              <p>
-                Sophia favored
-                <span>Clay Sculpting Class</span>
-              </p>
-            </div>
-            <small>1 day ago</small>
-          </div>
-
-          <div class="contact-status">
-            <div class="contact-activity">
-              <img src="{% static 'images/5.jpg' %}" alt="" />
-              <p>
-                Kate bought a ticket for
-                <span>Latin Rhythms Fusion</span>
-              </p>
-            </div>
-            <small>3 day ago</small>
-          </div>
-
-          <div class="contact-status">
-            <div class="contact-activity">
-              <img src="{% static 'images/6.jpg' %}" alt="" />
-              <p>
-                Ben favored
-                <span>Harry Potter Film Concert Series</span>
-              </p>
-            </div>
-            <small>6 day ago</small>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
   </section>
+  <script>
+    $(document).ready(function () {
+      $(".like-btn").click(function () {
+        var btn = $(this);
+        var eventId = btn.data("event-id");
+
+        $.ajax({
+          url: '{% url "like_event" event_id=0 %}'.replace(0, eventId),
+          type: "POST",
+          dataType: "json",
+          headers: { "X-CSRFToken": "{{ csrf_token }}" },
+          success: function (response) {
+            if (response.message === "Liked") {
+              btn.addClass("liked");
+            } else if (response.message === "Unliked") {
+              btn.removeClass("liked");
+            }
+          }
+        });
+      });
+    });
+
+  </script>
 </body>
 
 </html>
