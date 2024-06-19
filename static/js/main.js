@@ -120,4 +120,30 @@ likeBtns.forEach((likeBtn) => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const openBtn = document.getElementById('open-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const offcanvas = document.getElementById('offcanvas');
+  const overlay = document.getElementById('overlay');
 
+  if (openBtn && closeBtn && offcanvas && overlay) {
+    openBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      offcanvas.classList.add('show');
+      overlay.classList.add('visible');
+    });
+
+    closeBtn.addEventListener('click', (event) => {
+      event.preventDefault();
+      offcanvas.classList.remove('show');
+      overlay.classList.remove('visible');
+    });
+
+    overlay.addEventListener('click', () => {
+      offcanvas.classList.remove('show');
+      overlay.classList.remove('visible');
+    });
+  } else {
+    console.error('One or more elements not found.');
+  }
+});

@@ -19,6 +19,13 @@
 </head>
 
 <body>
+  <main>
+    {% block content %}
+    <!-- Default content can go here -->
+    {% endblock %}
+</main>
+<div id="overlay" class="overlay"></div>
+
   <nav class="main-menu">
     <div>
       <div class="user-info">
@@ -26,8 +33,8 @@
         <p>{{form_data.username}}</p>
       </div>
       <ul>
-        <li class="nav-item active">
-          <a href="#">
+        <li class="nav-item">
+          <a href="{% url 'profile_view' %}" id="open-btn">
             <i class="fa fa-user nav-icon"></i>
             <span class="nav-text">Profile</span>
           </a>
