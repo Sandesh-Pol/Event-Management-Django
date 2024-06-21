@@ -6,7 +6,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 from .forms import LoginForm, RegisterForm,OTPVerificationForm ,PasswordResetRequestForm, SetNewPasswordForm
 from .models import Profile
-from event_card.views import index_view
+from event_card.views import base_view
 from django.contrib.auth.models import User
 import uuid
 from .models import OTP
@@ -25,7 +25,7 @@ def login_user(request):
                 if user.is_active:
                     login(request, user)
                     request.session['form_data'] = form.cleaned_data
-                    return redirect('index_view')
+                    return redirect('base_view')
                 else:
                     messages.error(request, 'Account not activated. Please check your email.', extra_tags='red')
             else:

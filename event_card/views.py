@@ -4,8 +4,8 @@ from django.http import JsonResponse
 from .models import Event, Like, UserAction
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-@login_required
-def index_view(request):
+
+def base_view(request):
     query = request.GET.get('query', '')
     events = Event.objects.all()
     if query:
@@ -43,10 +43,9 @@ def index_view(request):
         'event_count':event_count,
         'user_actions': user_actions    
     }
-    return render(request, 'index.html', context)
+    return render(request, 'base.html', context)
 
 
-@login_required
 def like_event(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     user = request.user
@@ -66,7 +65,6 @@ def like_event(request, event_id):
 
     return JsonResponse({'message': 'Liked' if liked else 'Unliked', 'likes': event.likes})
 
-@login_required
 def share_event(request, event_id, platform):
     event = get_object_or_404(Event, id=event_id)
     user = request.user
@@ -77,6 +75,5 @@ def share_event(request, event_id, platform):
     return JsonResponse({'message': 'Invalid platform'}, status=400)
 
 
-@login_required
 def profile_view(request):
     return render(request, 'profile.html')
