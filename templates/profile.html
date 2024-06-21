@@ -5,6 +5,15 @@
 {% block title %}Profile{% endblock %}
 
 {% block profile %}
+<div id="offcanvas" class="offcanvas show">
+    <div class="profile-header">
+        <p>Edit Profile</p>
+        <a href="#" id="close-btn">&times;</a>
+        <div class="head-img">
+          <img src="{% static 'images/user.png' %}" alt="">
+        </div>
+      </div>
+</div>
+<div id="overlay" class="overlay visible"></div>
 
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, autem!</h1>
 {% endblock %}

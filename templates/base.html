@@ -20,8 +20,9 @@
 
 <body>
   <main>
+    {% block profile %}
+
     <div id="offcanvas" class="offcanvas">
-      {% block profile %}
       <div class="profile-header">
         <a href="#" id="close-btn">&times;</a>
         <div class="head-img">
@@ -89,10 +90,11 @@
           <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
         </div>
       </div>
-      {% endblock %}
     </div>
+    <div id="overlay" class="overlay"></div>
+{% endblock %}
 </main>
-<div id="overlay" class="overlay"></div>
+
 
   <nav class="main-menu">
     <div>
