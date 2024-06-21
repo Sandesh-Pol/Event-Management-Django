@@ -34,8 +34,8 @@
           <p>Sandesh Pol</p>
           <span> <i class="fa fa-map-marker-alt"></i>
             Pimpri Chinchwad, India</span>
-          <button>Edit Profile</button>
-          <div class="share-icon">
+            <a href="{% url 'profile_view' %}" class="button">Edit Profile</a>
+            <div class="share-icon">
             <i class="fas fa-share"></i>
           </div>
         </div>
@@ -102,7 +102,7 @@
       </div>
       <ul>
         <li class="nav-item">
-          <a href="{% url 'profile_view' %}" id="open-btn">
+          <a href="#" id="open-btn">
             <i class="fa fa-user nav-icon"></i>
             <span class="nav-text">Profile</span>
           </a>
