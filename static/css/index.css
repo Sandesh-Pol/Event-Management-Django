@@ -1107,7 +1107,7 @@ body::-webkit-scrollbar-thumb {
   left: 12px;
   color: var(--primary-color);
 }
-.user-name  button{
+.user-name  .button{
   position: absolute;
   top: 185px;
   right: 60px;
