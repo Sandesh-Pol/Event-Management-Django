@@ -1003,9 +1003,7 @@ body::-webkit-scrollbar-thumb {
   }
 }
 
-
-/* profile header  */
-
+/* profile view  */
 
 .offcanvas {
   position: fixed;
@@ -1019,11 +1017,8 @@ body::-webkit-scrollbar-thumb {
   transition: 0.3s;
   padding-top: 60px;
   z-index: 1045; /* Ensures the sidebar is above the overlay */
-  box-shadow: 0px 4px 5px 0px var(--shadow-color),
-
+  box-shadow: 0px 4px 5px 0px var(--shadow-color);
 }
-
-
 
 #close-btn {
   position: absolute;
@@ -1057,7 +1052,6 @@ body::-webkit-scrollbar-thumb {
   opacity: 1;
 }
 
-
 .head-img img {
   position: absolute;
   top: 0;
@@ -1068,15 +1062,14 @@ body::-webkit-scrollbar-thumb {
   text-decoration: none;
   position: absolute;
   z-index: 1;
-
 }
-.profile-header{
+.profile-header {
   width: 100%;
   height: 260px;
   border-bottom: 2px solid var(--border-color);
 }
 
-.user-data img{
+.user-data img {
   width: 125px;
   height: 125px;
   position: absolute;
@@ -1084,12 +1077,12 @@ body::-webkit-scrollbar-thumb {
   left: 12px;
   border-radius: 50%;
   border: 3px solid white;
-  border-bottom:none;
+  border-bottom: none;
   border-left: none;
   border-right: none;
 }
 
-.user-name{
+.user-name {
   display: flex;
 }
 .user-name p {
@@ -1098,7 +1091,7 @@ body::-webkit-scrollbar-thumb {
   font-size: 22px;
   left: 12px;
   font-weight: 700;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--primary-color);
 }
 .user-name span {
@@ -1107,7 +1100,7 @@ body::-webkit-scrollbar-thumb {
   left: 12px;
   color: var(--primary-color);
 }
-.user-name  .button{
+.user-name .button {
   position: absolute;
   top: 185px;
   right: 60px;
@@ -1120,7 +1113,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 800;
   font-size: 15px;
 }
-.share-icon{
+.share-icon {
   border-radius: 100%;
   border: 1px solid;
   position: absolute;
@@ -1141,7 +1134,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   height: 290px;
 }
-.account  p {
+.account p {
   font-size: 22px;
   margin-left: 12px;
   margin-top: 20px;
@@ -1162,9 +1155,7 @@ body::-webkit-scrollbar-thumb {
   color: var(--accent-color);
 }
 
-
-
-.dropdown-icon{
+.dropdown-icon {
   position: absolute;
   right: -60%;
   width: 310px;
@@ -1188,7 +1179,7 @@ body::-webkit-scrollbar-thumb {
   width: 100%;
   height: 372px;
 }
-.about-us  p {
+.about-us p {
   font-size: 22px;
   margin-left: 12px;
   font-weight: 800;
@@ -1204,7 +1195,141 @@ body::-webkit-scrollbar-thumb {
   }
 }
 @media (max-width: 320px) {
-  .dropdown-icon{
+  .dropdown-icon {
     right: 35px;
   }
+}
+
+/* Profile form  */
+
+.back-button {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1;
+}
+.back-button i{
+  font-weight: 600; !important
+}
+.head-back img{
+  position: absolute;
+  top: 0;
+  height: 50px;
+}
+.head-back p {
+  font-size: 18px;
+  font-weight: 600;
+  position: absolute;
+  top: 12px;
+  left: 55px;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+}
+.profile-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-image img{
+  height: 125px;
+  width: 125px;
+  border-radius: 50%;
+  margin-top: 10px;
+  border-bottom: 3px solid var(--border-color);
+
+}
+
+.icon-circle {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  outline: none;
+  background-color: var(--accent-color);
+  position: absolute;
+  top: 10rem;
+  left: 56%;
+}
+
+.icon-circle img {
+  height: 30px;
+  width: 30px;
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+.user-form{
+  padding: 20px;
+  border-radius: 8px;
+  width: 100vw;
+}
+
+.user-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-body);
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  height: 80px; /* Adjust height for textarea */
+}
+
+.form-group button {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 95%;
+}
+
+
+.form-group input:valid,
+.form-group textarea:valid {
+  border-color: #ccc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+#birthday{
+  color: var(--primary-color);
+}
+
+@media (min-width: 425px) {
+  .user-form {
+    width: 430px; 
+}
 }

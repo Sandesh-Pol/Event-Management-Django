@@ -1,19 +1,64 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
-{% block title %}Profile{% endblock %}
-
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}Profile{%endblock%} 
 {% block profile %}
 <div id="offcanvas" class="offcanvas show">
-    <div class="profile-header">
-        <p>Edit Profile</p>
-        <a href="#" id="close-btn">&times;</a>
-        <div class="head-img">
-          <img src="{% static 'images/user.png' %}" alt="">
+  <div class="profile-header-user">
+    <div class="head-back">
+      <p>Edit Profile</p>
+      <a href="{% url 'base_view' %}" class="back-button"><i class="fas fa-arrow-left"></i></a>
+      <img src="{% static 'images/user.png' %}" alt="" />
+    </div>
+    <div class="profile-image">
+      <img src="{% static 'images/user.jpg' %}" alt="" />
+      <span class="icon-circle">
+        <input type="file" id="fileInput" style="display: none;">
+        <img src="{% static 'images/camera1.svg' %}" alt="Upload File">
+      </span>
+    </div>
+    <div class="user-form">
+      <form action="#" method="POST">
+        <div class="form-group">
+          <label for="firstName"><span>First Name</span></label>
+          <input type="text" id="firstName" name="firstName" required>
         </div>
-      </div>
+        <div class="form-group">
+          <label for="lastName"><span>Last Name</span></label>
+          <input type="text" id="lastName" name="lastName" required>
+        </div>
+        <div class="form-group">
+          <label for="location"><span>Where are you from?</span></label>
+          <input type="text" id="location" name="location">
+        </div>
+        <div class="form-group">
+          <label for="bio"><span>Bio</span></label>
+          <textarea id="bio" name="bio"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="birthday"><span>Birthday</span></label>
+          <input type="date" id="birthday" name="birthday">
+        </div>
+        <div class="form-group">
+          <label for="phone"><span>Phone Number:</span></label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="email"><span>Email</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <button type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
+<script>
+  // JavaScript to open file dialog on image click
+  document.querySelector('.icon-circle img').addEventListener('click', function() {
+    document.querySelector('#fileInput').click();
+  });
+</script>
 <div id="overlay" class="overlay visible"></div>
 
 {% endblock %}
