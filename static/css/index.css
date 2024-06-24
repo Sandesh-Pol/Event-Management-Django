@@ -13,6 +13,7 @@ Ecem Gokdogan */
   --border-color: rgba(131, 135, 193, 0.4);
   --shadow-color: rgba(0, 0, 0, 0.05);
   --accent-color: rgb(194, 33, 105);
+  --fant-colour: rgba(48, 47, 47, 0.849);
 }
 
 .darkmode {
@@ -25,6 +26,7 @@ Ecem Gokdogan */
   --border-color: rgba(189, 192, 234, 0.4);
   --shadow-color: rgba(208, 195, 226, 0.13);
   --accent-color: rgb(185, 129, 250);
+  --fant-colour: rgb(255, 255, 255);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1061,7 +1063,7 @@ body::-webkit-scrollbar-thumb {
 .profile-header a {
   text-decoration: none;
   position: absolute;
-  z-index: 1;
+  z-index: 2;
 }
 .profile-header {
   width: 100%;
@@ -1203,7 +1205,7 @@ body::-webkit-scrollbar-thumb {
 /* Profile form  */
 
 .back-button {
-  position: absolute;
+  position: fixed;
   top: 12px;
   left: 13px;
   font-size: 20px;
@@ -1211,23 +1213,25 @@ body::-webkit-scrollbar-thumb {
   border: none;
   color: white;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
 }
 .back-button i{
   font-weight: 600; !important
 }
 .head-back img{
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 50px;
+  width: 425px;
+  z-index: 1;
 }
 .head-back p {
   font-size: 18px;
   font-weight: 600;
-  position: absolute;
+  position: fixed;
   top: 12px;
   left: 55px;
-  z-index: 1;
+  z-index: 2;
   color: rgb(255, 255, 255);
 }
 .profile-image{
@@ -1240,8 +1244,6 @@ body::-webkit-scrollbar-thumb {
   width: 125px;
   border-radius: 50%;
   margin-top: 10px;
-  border-bottom: 3px solid var(--border-color);
-
 }
 
 .icon-circle {
@@ -1283,17 +1285,20 @@ body::-webkit-scrollbar-thumb {
 .form-group label span {
   font-weight: bold;
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  color: var(--fant-colour);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 8px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 18px;
   border: 1px solid var(--border-color);
   background-color: var(--bg-body);
   border-radius: 4px;
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .form-group textarea {
@@ -1308,7 +1313,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  width: 95%;
+  width: 100%;
 }
 
 
@@ -1317,13 +1322,10 @@ body::-webkit-scrollbar-thumb {
   border-color: #ccc;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: #4CAF50;
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+  }
 #birthday{
   color: var(--primary-color);
 }
