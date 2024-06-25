@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-$^+3ib!s@7qp=w^uhdsro-gj_fqu*w6^cc!5z44m7*ov5u!51e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','192.168.1.8']
+# ALLOWED_HOSTS = ['localhost','192.168.1.7']
 
 
 # Application definition
@@ -129,7 +129,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-ALLOWED_HOSTS = ['localhost','192.168.1.3']
+# settings.py
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 LOGIN_URL = '/login/'
@@ -153,3 +155,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'event_images')
 
 # Define the URL for serving media files
 MEDIA_URL = '/event_images/'
+
+
+LOGIN_URL = '/'  
+
+# Change '/login/' to match your actual login URL pattern
