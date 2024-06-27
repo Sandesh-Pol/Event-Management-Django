@@ -186,7 +186,7 @@
           </div>
         </div>
       </div>
-
+      {% block details_view %}
       <div class="header">
         <picture class="morning-img">
           <img class="header-mobile" src="{% static 'images/animated1_lite.png' %}" alt="" />
@@ -207,7 +207,7 @@
           {% for event in events %}
           {% for event_id, like_status in user_likes.items %}
           {% if event_id == event.id %}
-          <div class="card event-card">
+          <div class="card event-card" id="event-card-{{ event.id }}" >
             <div class="event-header">
               <img src="{{ event.image.url }}" alt="{{ event.name }}" />
               <p>{{ event.time }}</p>
@@ -256,9 +256,32 @@
       </div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var eventCards = document.querySelectorAll('.event-card');
+            
+            eventCards.forEach(function(card) {
+                card.addEventListener('click', function() {
+                    // Extract the event ID from the card's ID attribute
+                    var eventId = this.id.replace('event-card-', '');
+                    
+                    // Construct the URL for the event details view
+                    var url = '/home/details/' + eventId + '/';  // Adjust the URL pattern as per your Django routing
+                    
+                    // Redirect the user to the event details page
+                    window.location.href = url;
+                });
+            });
+        });
+    </script>
+    
+    
+
+      {% endblock %}
 
 
-      <div class="reviews">
+
+      <!-- <div class="reviews">
         <h1>Past Event Reviews</h1>
         <div class="review-container">
           <div class="card review-card">
@@ -310,7 +333,7 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     {% endblock %}
 

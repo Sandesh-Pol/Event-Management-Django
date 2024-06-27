@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}details{%endblock%} 
+{% block details_view %}
+<div class="event-details-container">
+  <div class="event-image">
+      <img src="{% static 'images/death.jpg' %}" alt="Event Image">
+  </div>
+  <div class="event-details">
+      <h1 class="event-title">Event Title</h1>
+      <button class="tickets-button">Buy Tickets</button>
+      <div class="about-event">
+          <h2>About Event</h2>
+          <p>Description of the event goes here.</p>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

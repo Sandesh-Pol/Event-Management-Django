@@ -80,3 +80,7 @@ def share_event(request, event_id, platform):
 @login_required
 def profile_view(request):
     return render(request, 'profile.html')
+
+
+def details_view(request,event_id):
+    return render(request, 'details.html')
