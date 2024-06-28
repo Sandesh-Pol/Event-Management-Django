@@ -207,7 +207,7 @@
           {% for event in events %}
           {% for event_id, like_status in user_likes.items %}
           {% if event_id == event.id %}
-          <div class="card event-card" id="event-card-{{ event.id }}" >
+          <div class="card event-card">
             <div class="event-header">
               <img src="{{ event.image.url }}" alt="{{ event.name }}" />
               <p>{{ event.time }}</p>
@@ -225,7 +225,7 @@
                 {{ event.type }}
               </p>
               <div class="btn-group">
-                <button>Buy Ticket</button>
+                <a href="{% url 'details_view' event.id %}" class="buy-ticket-btn">Buy Ticket</a>
                 <div class="share">
                   <button class="share-btn">
                     <i class="fa-solid fa-share"></i>
@@ -256,26 +256,6 @@
       </div>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var eventCards = document.querySelectorAll('.event-card');
-            
-            eventCards.forEach(function(card) {
-                card.addEventListener('click', function() {
-                    // Extract the event ID from the card's ID attribute
-                    var eventId = this.id.replace('event-card-', '');
-                    
-                    // Construct the URL for the event details view
-                    var url = '/home/details/' + eventId + '/';  // Adjust the URL pattern as per your Django routing
-                    
-                    // Redirect the user to the event details page
-                    window.location.href = url;
-                });
-            });
-        });
-    </script>
-    
-    
 
       {% endblock %}
 

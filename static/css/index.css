@@ -404,6 +404,27 @@ body {
   border: 2px solid rgb(151, 177, 226);
 }
 
+.event-footer .buy-ticket-btn {
+  background-color: rgb(51, 108, 215);
+  color: rgb(240, 248, 255);
+  padding: 5px 10px;
+  outline: 0;
+  border: 2px solid rgb(51, 108, 215);
+  border-radius: 4px;
+  font-size: clamp(0.6rem, 3vw, 0.8rem);
+  font-weight: 500;
+  margin-left: 3px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Ensure block styling for padding and border */
+}
+
+.event-footer .buy-ticket-btn:hover {
+  background-color: rgb(90, 139, 231);
+  border: 2px solid rgb(151, 177, 226);
+}
+
 /* Share Button Popup */
 
 .share {
@@ -1336,6 +1357,7 @@ input:-webkit-autofill,
 }
 }
 
+/* details views */
 
 .event-details-container {
   max-width: 800px;
