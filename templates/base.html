@@ -225,7 +225,9 @@
                 {{ event.type }}
               </p>
               <div class="btn-group">
-                <a href="{% url 'details_view' event.id %}" class="buy-ticket-btn">Buy Ticket</a>
+                <div class="buy-ticket-btn">
+                  <a href="{% url 'details_view' event.id %}" id="buy-ticket-btn">Buy Ticket</a>
+                </div>
                 <div class="share">
                   <button class="share-btn">
                     <i class="fa-solid fa-share"></i>

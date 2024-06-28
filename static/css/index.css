@@ -404,7 +404,7 @@ body {
   border: 2px solid rgb(151, 177, 226);
 }
 
-.event-footer .buy-ticket-btn {
+#buy-ticket-btn{
   background-color: rgb(51, 108, 215);
   color: rgb(240, 248, 255);
   padding: 5px 10px;
@@ -420,7 +420,7 @@ body {
   display: inline-block; /* Ensure block styling for padding and border */
 }
 
-.event-footer .buy-ticket-btn:hover {
+#buy-ticket-btn:hover{
   background-color: rgb(90, 139, 231);
   border: 2px solid rgb(151, 177, 226);
 }
