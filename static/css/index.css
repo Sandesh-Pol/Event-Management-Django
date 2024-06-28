@@ -1360,10 +1360,12 @@ input:-webkit-autofill,
 /* details views */
 
 .event-details-container {
-  max-width: 800px;
+  max-width: 100%;
   margin: 20px auto;
   background-color: var(--bg-body);
   overflow: hidden;
+  border: 2px solid var(--border-color);
+  padding: 15px;
 }
 
 .event-image img {

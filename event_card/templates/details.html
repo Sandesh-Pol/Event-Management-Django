@@ -4,16 +4,15 @@
 {% block details_view %}
 <div class="event-details-container">
   <div class="event-image">
-      <img src="{% static 'images/death.jpg' %}" alt="Event Image">
+      <img src="{{ event.image.url }}" alt="Event Image">
   </div>
   <div class="event-details">
-      <h1 class="event-title">Event Title</h1>
-      <button id="myButton" class="tickets-button">Buy Tickets</button>
+      <h1 class="event-title">{{event.name}}</h1>
+      <a id="buy-ticket-btn" class="tickets-button">Buy Tickets</a>
       <div class="about-event">
           <h2>About Event</h2>
           <p>Description of the event goes here.</p>
       </div>
   </div>
 </div>
-
 {% endblock %}

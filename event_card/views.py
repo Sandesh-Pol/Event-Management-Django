@@ -82,5 +82,8 @@ def profile_view(request):
     return render(request, 'profile.html')
 
 
-def details_view(request,event_id):
-    return render(request, 'details.html')
+
+def details_view(request, event_id):
+    event = get_object_or_404(Event, pk=event_id)
+    return render(request, 'details.html', {'event': event})
+

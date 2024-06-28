@@ -186,7 +186,6 @@
           </div>
         </div>
       </div>
-      {% block details_view %}
       <div class="header">
         <picture class="morning-img">
           <img class="header-mobile" src="{% static 'images/animated1_lite.png' %}" alt="" />
@@ -200,7 +199,7 @@
           <img class="header-desktop" src="{% static 'images/animated2_dark.png' %}" alt="" />
         </picture>
       </div>
-
+      {% block details_view %}
       <div class="upcoming-events">
         <h1>Upcoming Events</h1>
         <div class="event-container">
