@@ -91,7 +91,10 @@ Thank you for using Event Tickets Management! We hope you find it helpful and ea
 
 Happy Event Managing! 🎉
 
-   
+![image](https://github.com/user-attachments/assets/97e48fbd-1a2c-42b8-bdd3-316c72a25699)
+
+![image](https://github.com/user-attachments/assets/1e66020b-69e7-4a5d-8c2b-d89559e9ee7d)
+
 
 
 
