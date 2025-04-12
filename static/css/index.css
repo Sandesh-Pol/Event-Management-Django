@@ -17,21 +17,21 @@ Ecem Gokdogan */
 }
 
 .darkmode {
-  --bg-body: rgb(6, 5, 40);
-  --primary-color: rgb(248, 248, 248);
-  --primary-hover-color: rgb(159, 159, 159);
-  --scrollbar-color: rgba(44, 49, 88, 0.7);
-  --card-bg-color: rgb(24, 26, 50);
-  --star-color: #a1d31a;
-  --border-color: rgba(189, 192, 234, 0.4);
-  --shadow-color: rgba(208, 195, 226, 0.13);
-  --accent-color: rgb(185, 129, 250);
+  --bg-body: rgb(18, 18, 18);
+  --primary-color: rgb(255, 255, 255);
+  --primary-hover-color: rgb(200, 200, 200);
+  --scrollbar-color: rgba(75, 75, 75, 0.7);
+  --card-bg-color: rgba(26, 24, 24, 54%);
+  --star-color: #ffd700;
+  --border-color: rgba(75, 75, 75, 0.5);
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  --accent-color: rgb(241, 246, 255);
   --fant-colour: rgb(255, 255, 255);
 }
 
 @media (prefers-color-scheme: dark) {
   .theme {
-    background-color: rgb(6, 5, 40);
+    background-color: rgb(0, 0, 0);
     color: rgb(248, 248, 248);
   }
 }
@@ -174,7 +174,7 @@ body {
 .card {
   background-color: var(--card-bg-color);
   border-radius: 8px;
-  border: 2px solid rgba(169, 150, 253, 0.5);
+  border: 2px solid rgb(57 57 57 / 50%);
   box-shadow: 0px 4px 5px 0px var(--shadow-color),
     0px 1px 8px 0px var(--shadow-color), 0px 2px 4px -1px var(--shadow-color);
 }
@@ -631,7 +631,7 @@ body {
   width: 100%;
   background: var(--card-bg-color);
   border-radius: 8px;
-  border: 2px solid rgba(169, 150, 253, 0.5);
+  border: 2px solid rgb(57 57 57 / 50%);
   box-shadow: 0 7px 25px var(--shadow-color);
   padding: 20px 15px;
   margin: 20px 0;
