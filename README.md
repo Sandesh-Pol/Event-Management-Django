@@ -91,9 +91,6 @@ Thank you for using Event Tickets Management! We hope you find it helpful and ea
 
 Happy Event Managing! 🎉
 
-   
-
-
 
 
 

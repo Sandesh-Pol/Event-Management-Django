@@ -143,7 +143,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "sdcr7ff@gmail.com"
-EMAIL_HOST_PASSWORD = "kbihqpulrpbrkxdz"
+EMAIL_HOST_PASSWORD = "kswttbptaujbfqfe"
 
 # AB8X 4AE5 69BR GZD4 7T1Z YD67 99P4 C1N0
 
