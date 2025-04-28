@@ -13,9 +13,25 @@
   <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
   <script defer src="{% static 'js/main.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="{% static 'js/charts.js' %}"></script>
+  <script defer src="{% static 'js/likes.js' %}"></script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <title>Document</title>
+  <title>Event Management</title>
+
+  <!-- Initialize chart data -->
+  <script>
+    const chartData = {
+      labels: ["Concert", "Theatre", "Workshop", "Sport"],
+      data: [
+        {{ event_type_percentages.Concert|default:0 }},
+        {{ event_type_percentages.Theatre|default:0 }},
+        {{ event_type_percentages.Workshop|default:0 }},
+        {{ event_type_percentages.Sport|default:0 }}
+      ]
+    };
+  </script>
+
 </head>
 
 <body>
@@ -26,70 +42,23 @@
       <div class="profile-header">
         <a href="#" id="close-btn">&times;</a>
         <div class="head-img">
-          <img src="{% static 'images/user.png' %}" alt="">
+          <img src="{% static 'images/user.png' %}" alt="Profile Header">
         </div>
         <div class="user-data">
-          <img src="{% static 'images/user.jpg' %}" alt="">
+          <img src="{% static 'images/user.jpg' %}" alt="User Profile">
         </div>
         <div class="user-name">
-          <p>Sandesh Pol</p>
-          <span> <i class="fa fa-map-marker-alt"></i>
-            Pimpri Chinchwad, India</span>
-            <a href="{% url 'profile_view' %}" class="button">Edit Profile</a>
-            <div class="share-icon">
+          <p>{{ request.user.username }}</p>
+          <span><i class="fa fa-map-marker-alt"></i> Pimpri Chinchwad, India</span>
+          <a href="{% url 'profile_view' %}" class="button">Edit Profile</a>
+          <div class="share-icon">
             <i class="fas fa-share"></i>
           </div>
         </div>
       </div>
   
-      <div class="account">
-        <p>Account</p>
-  
-        <div class="item">
-          <span class="icon"><i class="fas fa-calendar-alt"></i></span> <h6>Booking History</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fas fa-inbox"></i></span> <h6>Inbox</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fas fa-bell"></i></span><h6> Notification</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fas fa-search"></i></span><h6> Find Friend</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-      </div>
-  
-      <div class="about-us">
-        <p>About</p>
-        <div class="item">
-          <span class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span> <h6>About Us</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fa fa-comment" aria-hidden="true"></i></span> <h6>Send Feedback</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fa fa-lock" aria-hidden="true"></i></i></span> <h6>Privacy Policy</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fa fa-file-text" aria-hidden="true"></i></i></span> <h6>Terms and Conditions</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fa fa-question-circle" aria-hidden="true"></i></i></span> <h6>Need Help?</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-        <div class="item">
-          <span class="icon"><i class="fa fa-sign-out" aria-hidden="true"></i></span> <h6>Logout</h6>
-          <span class="dropdown-icon"><i class="fas fa-chevron-right"></i></span>
-        </div>
-      </div>
+      {% include 'includes/account_menu.html' %}
+      {% include 'includes/about_menu.html' %}
     </div>
     <div id="overlay" class="overlay"></div>
 {% endblock %}
@@ -168,51 +137,21 @@
     {% block left-content %}
       
     <div class="left-content">
-      <div class="search-and-check">
-        <form class="search-box" method="GET" action="">
-          <input type="text" name="query" placeholder="Search event..." value="{{ query }}" />
-          <i class="bx bx-search" onclick="this.closest('form').submit();"></i>
-        </form>
-        <div class="interaction-control-mobile interactions">
-          <i class="fa-regular fa-envelope notified"></i>
-          <i class="fa-regular fa-bell notified"></i>
-          <div class="toggle" onclick="switchTheme()">
-            <div class="mode-icon moon">
-              <i class="bx bxs-moon"></i>
-            </div>
-            <div class="mode-icon sun hidden">
-              <i class="bx bxs-sun"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header">
-        <picture class="morning-img">
-          <img class="header-mobile" src="{% static 'images/animated1_lite.png' %}" alt="" />
-          <img class="header-tablet" src="{% static 'images/5.png' %}" alt="" />
-          <img class="header-desktop" src="{% static 'images/animated2_lite.png' %}" alt="" />
-        </picture>
-
-        <picture class="night-img hidden">
-          <img class="header-mobile" src="{% static 'images/animated1.png' %}" alt="" />
-          <img class="header-tablet" src="{% static 'images/5_dark.png' %}" alt="" />
-          <img class="header-desktop" src="{% static 'images/animated2_dark.png' %}" alt="" />
-        </picture>
-      </div>
+      {% include 'includes/search_header.html' %}
+      
       {% block details_view %}
       <div class="upcoming-events">
         <h1>Upcoming Events</h1>
         <div class="event-container">
           {% for event in events %}
-          {% for event_id, like_status in user_likes.items %}
-          {% if event_id == event.id %}
           <div class="card event-card">
             <div class="event-header">
               <img src="{{ event.image.url }}" alt="{{ event.name }}" />
               <p>{{ event.time }}</p>
-              <i class="bx {% if like_status %} like-btn bxs-heart bounce-in liked {% else %} bx-heart like-btn {% endif %}"
-                data-event-id="{{ event_id }}"
-                data-liked="{% if user.is_authenticated %}true{% else %}false{% endif %}">
+              <i class="bx {% if event.id in user_likes %}bxs-heart bounce-in liked{% else %}bx-heart{% endif %} like-btn"
+                 data-event-id="{{ event.id }}"
+                 data-liked="{% if user.is_authenticated %}true{% else %}false{% endif %}"
+                 data-csrf-token="{{ csrf_token }}">
               </i>
             </div>
             <div class="event-content">
@@ -220,43 +159,18 @@
               <p>{{ event.place }}</p>
             </div>
             <div class="event-footer">
-              <p style="background-color: {{ event.get_type_color }}">
-                {{ event.type }}
-              </p>
+              <p style="background-color: {{ event.get_type_color }}">{{ event.type }}</p>
               <div class="btn-group">
                 <div class="buy-ticket-btn">
                   <a href="{% url 'details_view' event.id %}" id="buy-ticket-btn">Buy Ticket</a>
                 </div>
-                <div class="share">
-                  <button class="share-btn">
-                    <i class="fa-solid fa-share"></i>
-                  </button>
-                  <ul class="popup">
-                    <li>
-                      <a href="https://twitter.com/intent/tweet?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}&url={{ request.build_absolute_uri }}"
-                        style="color: rgb(79, 153, 213)">
-                        <i class="bx bxl-twitter"></i>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://api.whatsapp.com/send?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}%20{{ request.build_absolute_uri }}"
-                        style="color: rgb(34, 173, 34)">
-                        <i class="bx bxl-whatsapp"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                {% include 'includes/share_buttons.html' with event=event %}
               </div>
-
             </div>
           </div>
-          {% endif %}
-          {% endfor %}
           {% endfor %}
         </div>
       </div>
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
       {% endblock %}
 
@@ -321,19 +235,8 @@
     {% block right-content %}
       
     <div class="right-content">
-      <div class="interaction-control interactions">
-        <i class="fa-regular fa-envelope notified"></i>
-        <i class="fa-regular fa-bell notified"></i>
-        <div class="toggle" onclick="switchTheme()">
-          <div class="mode-icon moon">
-            <i class="bx bxs-moon"></i>
-          </div>
-          <div class="mode-icon sun hidden">
-            <i class="bx bxs-sun"></i>
-          </div>
-        </div>
-      </div>
-
+      {% include 'includes/interaction_controls.html' %}
+      
       <div class="analytics">
         <h1>Analytics</h1>
         <div class="analytics-container">
@@ -350,96 +253,14 @@
             </div>
           </div>
 
-          <div class="chart" id="doughnut-chart">
+          <div class="chart-container">
             <h2>Distribution of Attended Events</h2>
-            <canvas id="doughnut"></canvas>
-            <ul></ul>
+            <div class="chart">
+              <canvas id="doughnut"></canvas>
+            </div>
           </div>
         </div>
       </div>
-
-      <script>
-        const chart = document.getElementById("doughnut");
-        const eventList = document.querySelector(".chart ul");
-
-        var data = {
-          labels: [
-            "Workshop",
-            "Theatre",
-            "Concert",
-            "Sport",
-          ],
-          datasets: [
-            {
-              label: "# of Events",
-              data: [
-                "{{ event_type_counts.Concert }}",
-                "{{ event_type_counts.Theatre }}",
-                "{{ event_type_counts.Workshop }}",
-                "{{ event_type_counts.Sport }}",
-              ],
-              backgroundColor: [
-                "#b31a4d", // Workshop
-                "#4a920f", // Theatre
-                "#582bac", // Concert
-                "#e48e2c", // Sport
-              ],
-              offset: 10,
-              hoverOffset: 8,
-              hoverBorderColor: "#9a999b",
-              borderWidth: 1,
-            },
-          ],
-        };
-
-        new Chart(chart, {
-          type: "doughnut",
-          data: data,
-          options: {
-            responsive: true,
-            plugins: {
-              legend: {
-                display: true,
-                labels: {
-                  color: "#8b8a96",
-                  font: {
-                    size: 12,
-                    weight: 600,
-                  },
-                },
-              },
-            },
-            layout: {
-              padding: {
-                bottom: 10,
-              },
-            },
-          },
-        });
-
-        const chartData = {
-          labels: ["Concert", "Theatre", "Workshop", "Sport"],
-          data: [
-            "{{ event_type_percentages.Concert }}",
-            "{{ event_type_percentages.Theatre }}",
-            "{{ event_type_percentages.Workshop }}",
-            "{{ event_type_percentages.Sport }}",
-          ]
-        };
-
-        console.log(chartData); // Add this line to debug the actual values
-
-        function population() {
-          chartData.labels.forEach((label, i) => {
-            let eachEvent = document.createElement("li");
-            eachEvent.innerHTML = `${label}: <span class="percentage">${chartData.data[i]}%</span> `;
-            eventList.appendChild(eachEvent);
-          });
-        }
-
-        population(); // Make sure to call the function
-      </script>
-
 
       <div class="contacts">
         <h1>Contacts</h1>
@@ -470,27 +291,22 @@
 
   </section>
   <script>
-    $(document).ready(function () {
-      $(".like-btn").click(function () {
-        var btn = $(this);
-        var eventId = btn.data("event-id");
+    // Initialize chart data
+    const chartData = {
+      labels: ["Concert", "Theatre", "Workshop", "Sport"],
+      data: [
+        {{ event_type_percentages.Concert|default:0 }},
+        {{ event_type_percentages.Theatre|default:0 }},
+        {{ event_type_percentages.Workshop|default:0 }},
+        {{ event_type_percentages.Sport|default:0 }}
+      ]
+    };
 
-        $.ajax({
-          url: '{% url "like_event" event_id=0 %}'.replace(0, eventId),
-          type: "POST",
-          dataType: "json",
-          headers: { "X-CSRFToken": "{{ csrf_token }}" },
-          success: function (response) {
-            if (response.message === "Liked") {
-              btn.addClass("liked");
-            } else if (response.message === "Unliked") {
-              btn.removeClass("liked");
-            }
-          }
-        });
-      });
+    // Initialize chart
+    document.addEventListener('DOMContentLoaded', function() {
+      initializeChart();
+      populateEventList();
     });
-
   </script>
 </body>
 

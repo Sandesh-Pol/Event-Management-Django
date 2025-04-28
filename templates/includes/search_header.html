@@ -1,0 +1,32 @@
+{% load static %}
+<div class="search-and-check">
+    <form class="search-box" method="GET" action="">
+        <input type="text" name="query" placeholder="Search event..." value="{{ query }}" />
+        <i class="bx bx-search" onclick="this.closest('form').submit();"></i>
+    </form>
+    <div class="interaction-control-mobile interactions">
+        <i class="fa-regular fa-envelope notified"></i>
+        <i class="fa-regular fa-bell notified"></i>
+        <div class="toggle" onclick="switchTheme()">
+            <div class="mode-icon moon">
+                <i class="bx bxs-moon"></i>
+            </div>
+            <div class="mode-icon sun hidden">
+                <i class="bx bxs-sun"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header">
+    <picture class="morning-img">
+        <img class="header-mobile" src="{% static 'images/animated1_lite.png' %}" alt="Morning Header Mobile" />
+        <img class="header-tablet" src="{% static 'images/5.png' %}" alt="Morning Header Tablet" />
+        <img class="header-desktop" src="{% static 'images/animated2_lite.png' %}" alt="Morning Header Desktop" />
+    </picture>
+
+    <picture class="night-img hidden">
+        <img class="header-mobile" src="{% static 'images/animated1.png' %}" alt="Night Header Mobile" />
+        <img class="header-tablet" src="{% static 'images/5_dark.png' %}" alt="Night Header Tablet" />
+        <img class="header-desktop" src="{% static 'images/animated2_dark.png' %}" alt="Night Header Desktop" />
+    </picture>
+</div> 

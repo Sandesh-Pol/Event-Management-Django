@@ -1,0 +1,46 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block title %}{{ event.name }} - Details{% endblock %} 
+
+{% block details_view %}
+<div class="event-details-container">
+    <div class="event-image">
+        <img src="{{ event.image.url }}" alt="{{ event.name }}">
+    </div>
+    <div class="event-details">
+        <h1 class="event-title">{{ event.name }}</h1>
+        <div class="event-meta">
+            <p><i class="fas fa-map-marker-alt"></i> {{ event.place }}</p>
+            <p><i class="fas fa-clock"></i> {{ event.time }}</p>
+            <p><i class="fas fa-tag"></i> {{ event.type }}</p>
+        </div>
+        <div class="event-actions">
+            <a href="#" id="buy-ticket-btn" class="tickets-button">Buy Tickets</a>
+            <div class="share-buttons">
+                <a href="https://twitter.com/intent/tweet?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}&url={{ request.build_absolute_uri }}"
+                   class="share-button twitter">
+                    <i class="bx bxl-twitter"></i>
+                </a>
+                <a href="https://api.whatsapp.com/send?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}%20{{ request.build_absolute_uri }}"
+                   class="share-button whatsapp">
+                    <i class="bx bxl-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="about-event">
+            <h2>About Event</h2>
+            <p>{{ event.description|default:"Description of the event goes here." }}</p>
+        </div>
+        <div class="event-stats">
+            <div class="stat">
+                <i class="fas fa-heart"></i>
+                <span>{{ event.likes }} Likes</span>
+            </div>
+            <div class="stat">
+                <i class="fas fa-share"></i>
+                <span>{{ event.shares|default:0 }} Shares</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

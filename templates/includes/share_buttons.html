@@ -1,0 +1,20 @@
+{% load static %}
+<div class="share">
+    <button class="share-btn">
+        <i class="fa-solid fa-share"></i>
+    </button>
+    <ul class="popup">
+        <li>
+            <a href="https://twitter.com/intent/tweet?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}&url={{ request.build_absolute_uri }}"
+               style="color: rgb(79, 153, 213)">
+                <i class="bx bxl-twitter"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://api.whatsapp.com/send?text={{ event.name }}%20at%20{{ event.place }}%20on%20{{ event.time }}%20{{ request.build_absolute_uri }}"
+               style="color: rgb(34, 173, 34)">
+                <i class="bx bxl-whatsapp"></i>
+            </a>
+        </li>
+    </ul>
+</div> 
